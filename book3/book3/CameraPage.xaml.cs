@@ -155,6 +155,10 @@ namespace book3
                         {
                             BookDB.insertBook(isbn, title, titleKana, subTitle, subTitleKana, author, authorKana, publisher, size, itemCaption, salesDate, price, gazo, genreId);
                         }
+                        if(title == null)
+                        {
+                            await DisplayAlert("警告","本が楽天ブックスに登録されていない可能性があります", "OK");
+                        }
                         if(scanPage.IsScanning == false)
                         {
                             scanPage.IsScanning = true;
